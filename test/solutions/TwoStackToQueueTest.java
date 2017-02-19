@@ -1,27 +1,18 @@
 package solutions;
 
-import junit.framework.Assert;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-
 public class TwoStackToQueueTest {
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void test() throws Exception {
 		TwoStackToQueue queue = new TwoStackToQueue();
 		queue.push(1);
 		queue.push(2);
 		queue.push(3);
-		Assert.assertEquals(queue.pop(), 1);
+		assertEquals("算法有问题",queue.pop(), 1);
 	}
 	
-//	public static void main(String[] args) throws Exception {
-//		TwoStackToQueue queue = new TwoStackToQueue();
-//		queue.push(1);
-//		queue.push(2);
-//		queue.push(3);
-//		System.out.println(queue.pop());
-//	}
 }
