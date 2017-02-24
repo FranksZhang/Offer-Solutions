@@ -8,12 +8,13 @@ package sort;
 public class ShellSort {
 
 	public static <T extends Comparable<? super T>> void shellSort(T[] arr) {
+		//取第一次步长为数组长度一半
 		int gap = arr.length >> 1;
 		int i, j;
 		for(; gap > 0; gap  >>= 1) {
 			for(i = gap; i < arr.length; i++) {
 				T temp = arr[i];
-				for(j = i; j > 0 && temp.compareTo(arr[j-gap]) < 0; j -= gap) {
+				for(j = i; j >= gap && temp.compareTo(arr[j-gap]) < 0; j -= gap) {
 					arr[j] = arr[j - gap];
 				}
 				arr[j] = temp;
